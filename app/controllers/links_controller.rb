@@ -6,14 +6,13 @@ class LinksController < ApplicationController
   end
 
   def create
-    @link = current_user.links.build(link_attributes)
-    if @link.valid?
-      digester = Digest::SHA1.new
-      @link.token = digester.hexdigest(@link.url)[0..10]
-      @link.save
+    service = LinkCreateService.new(user: current_user,
+                                    link_attributes: link_attributes)
+    @link = service.link
+    if service.create
       redirect_to link_path(@link)
     else
-      flash[:error] = @link.errors.full_messages.join("\n")
+      flash[:error] = service.error_messages
       render :new, status: :unprocessable_entity
     end
   end
