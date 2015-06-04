@@ -31,12 +31,13 @@ en:
       links: Links
       menu: MENU
   links:
+    delete:
+      deleted_link: Deleted Link - %{url}
     form:
       submit: Shorten
       url: URL
     index:
+      actions: Actions
       full_url: Destination
       new_link: New Link
       short_url: Short URL
-    delete:
-      deleted_link: Deleted Link - %{url}
