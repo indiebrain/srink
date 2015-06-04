@@ -38,3 +38,5 @@ en:
       full_url: Destination
       new_link: New Link
       short_url: Short URL
+    delete:
+      deleted_link: Deleted Link - %{url}

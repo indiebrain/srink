@@ -2,6 +2,41 @@ require "rails_helper"
 
 describe LinksController do
 
+  describe "DELETE #destroy" do
+    it "requires authentication" do
+      link = create(:link)
+      delete(:destroy,
+             id: link.id)
+
+      expect(response).
+        to redirect_to(sign_in_path)
+    end
+
+    it "redirects to the links index when the link is deleted" do
+      user = sign_in
+      link = create(:link,
+                    user: user)
+
+      delete(:destroy,
+             id: link.id)
+
+      expect(response).
+        to redirect_to(links_path)
+    end
+
+    it "renders a notice flash when the link is deleted" do
+      user = sign_in
+      link = create(:link,
+                    user: user)
+
+      delete(:destroy,
+             id: link.id)
+
+      expect(flash[:notice]).
+        to eq(t("links.delete.deleted_link", url: link.url))
+    end
+  end
+
   describe "GET #index" do
     it "require authentication" do
       get(:index)

@@ -1,6 +1,13 @@
 class LinksController < ApplicationController
   before_action :require_login
 
+  def destroy
+    link = current_user.links.find(params[:id])
+    if link.destroy
+      flash[:notice] = t("links.delete.deleted_link", url: link.url)
+    end
+    redirect_to links_path
+  end
 
   def create
     service = LinkCreateService.new(user: current_user,

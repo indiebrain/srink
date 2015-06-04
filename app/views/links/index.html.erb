@@ -14,6 +14,9 @@
       <a href="<%= redirect_url(link.token) %>"><%= redirect_url(link.token) %></a>
     </td>
     <td class="url"><%= link.url %></td>
+    <td class="actions">
+      <%= button_to "Delete", link_path(link), method: :delete %>
+    </td>
   </tr>
   <% end %>
 </tbody>
