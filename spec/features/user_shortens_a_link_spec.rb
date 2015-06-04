@@ -14,7 +14,7 @@ feature "User shortens a link" do
 
     link = user.links.first
     expect_link_to_be_shortened(link)
-    expect_to_be_on_link_show_page(link)
+    expect_to_be_on_link_index_page(link)
   end
 
   scenario "with an invalid url" do
@@ -36,9 +36,9 @@ feature "User shortens a link" do
       to_not be_nil
   end
 
-  def expect_to_be_on_link_show_page(link)
+  def expect_to_be_on_link_index_page(link)
     expect(page.current_path).
-      to eq("/links/#{link.id}")
+      to eq("/links")
   end
 
   def expect_page_to_have_invalid_url_notice

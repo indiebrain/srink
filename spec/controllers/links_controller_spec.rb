@@ -39,7 +39,7 @@ describe LinksController do
         to_not be_nil
     end
 
-    it "redirects to the created link when the new link is created" do
+    it "redirects to the user list of links when the new link is created" do
       user = sign_in
       link_attributes = attributes_for(:link)
 
@@ -48,7 +48,7 @@ describe LinksController do
 
       link = user.links.first
       expect(response).
-        to redirect_to(link_path(link))
+        to redirect_to(links_path)
     end
 
     it "renders the new link form when the new link is not created" do

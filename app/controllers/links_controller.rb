@@ -1,23 +1,24 @@
 class LinksController < ApplicationController
   before_action :require_login
 
-  def new
-    @link = Link.new
-  end
 
   def create
     service = LinkCreateService.new(user: current_user,
                                     link_attributes: link_attributes)
     @link = service.link
     if service.create
-      redirect_to link_path(@link)
+      redirect_to links_path
     else
       flash[:error] = service.error_messages
       render :new, status: :unprocessable_entity
     end
   end
 
-  def show
+  def index
+  end
+
+  def new
+    @link = Link.new
   end
 
   private
