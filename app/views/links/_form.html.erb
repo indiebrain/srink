@@ -1,4 +1,4 @@
 <%= simple_form_for link do |f|  %>
-  <%= f.input :url, label:t(".url"), required: true %>
+  <%= f.input :url, as: :string, label:t(".url"), required: true %>
   <%= f.button :submit, t(".submit") %>
 <% end %>

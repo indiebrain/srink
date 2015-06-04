@@ -16,6 +16,15 @@ feature "User view a list of links" do
     expect_page_to_have_link(link)
   end
 
+  scenario "user clicks create link" do
+    sign_in
+    visit("/links")
+    click_link(t("links.index.new_link"))
+
+    expect(page.current_path).
+      to eq(new_link_path)
+  end
+
   private
   def expect_page_to_have_link(link)
     within("#link-#{link.id}") do
