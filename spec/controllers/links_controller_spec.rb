@@ -2,6 +2,27 @@ require "rails_helper"
 
 describe LinksController do
 
+  describe "GET #index" do
+    it "require authentication" do
+      get(:index)
+
+      expect(response).
+        to redirect_to(sign_in_path)
+    end
+
+    it "assigns the user's links" do
+      user = sign_in
+      user_link = create(:link,
+                    user: user)
+      other_user_link = create(:link)
+
+      get(:index)
+
+      expect(assigns(:links)).
+        to match_array([user_link])
+    end
+  end
+
   describe "GET #new" do
     it "requires authentication" do
       get(:new)

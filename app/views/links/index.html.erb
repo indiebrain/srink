@@ -1,0 +1,16 @@
+<table id="links">
+<thead>
+  <th>Short URL</th>
+  <th>Destination</th>
+</thead>
+<tbody>
+  <% @links.each do |link| %>
+  <tr id="<%= "link-#{link.id}" %>">
+    <td class="short-url">
+      <a href="<%= redirect_url(link.token) %>"><%= redirect_url(link.token) %></a>
+    </td>
+    <td class="url"><%= link.url %></td>
+  </tr>
+  <% end %>
+</tbody>
+</table>
