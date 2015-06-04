@@ -1,7 +1,9 @@
-<table id="links">
+<table id="links" class="tables">
 <thead>
-  <th><%= t(".short_url") %></th>
-  <th><%= t(".full_url") %></th>
+  <tr>
+    <th><%= t(".short_url") %></th>
+    <th><%= t(".full_url") %></th>
+  </tr>
 </thead>
 <tbody>
   <% @links.each do |link| %>
