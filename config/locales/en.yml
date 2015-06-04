@@ -24,6 +24,9 @@ en:
     errors:
       messages:
         invalid_url: is not a parsable URL
+  layouts:
+    application:
+      links: Links
   links:
     form:
       submit: Shorten
