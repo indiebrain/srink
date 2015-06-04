@@ -26,8 +26,14 @@ en:
         invalid_url: is not a parsable URL
   layouts:
     application:
+      about: About
+      contact: Contact
       links: Links
+      menu: MENU
   links:
     form:
       submit: Shorten
       url: URL
+    index:
+      full_url: Destination
+      short_url: Short URL
