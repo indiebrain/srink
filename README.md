@@ -4,18 +4,28 @@ Another URL shortener. Shortly is a simple, but non-trivial, toy application mea
 
 ## System dependencies
 
-* Postgresql 9.4.1
+* postgresql
 
-## Database Setup
+## Application setup
+* Get the source
+```
+git clone http://www.github.com/indiebrain/shortly.git
+cd shortly
+```
+* Install Bundled dependencies
+```
+bundle install
+```
 
-```shell
+## Development Setup
+* Create the development database
+```
 bin/rake db:create db:migrate
 ```
 
 ## How to run the test suite
-
 * Create the test database
-```shell
+```
 bin/rake db:create db:migrate RAILS_ENV=test
 ```
 * Run rake
