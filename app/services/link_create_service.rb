@@ -6,7 +6,8 @@ class LinkCreateService
                  token_generator_type: SHA1TokenService)
     @user = user
     @link = user.links.build(link_attributes)
-    @token_generator = token_generator_type.new(link.url)
+    @token_generator = token_generator_type.new(input: link.url,
+                                                salt: user.email + Time.now.tv_nsec.to_s)
   end
 
   def create

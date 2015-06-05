@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20150530113406) do
     t.datetime "updated_at", null: false
   end
 
+  add_index "links", ["token"], name: "index_links_on_token", unique: true, using: :btree
   add_index "links", ["user_id"], name: "index_links_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|

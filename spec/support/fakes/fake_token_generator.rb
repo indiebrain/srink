@@ -1,6 +1,7 @@
 class FakeTokenGenerator
 
-  def initialize(input)
+  def initialize(input:,
+                salt: "")
     @input = input
   end
 

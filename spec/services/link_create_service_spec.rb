@@ -34,7 +34,7 @@ describe LinkCreateService do
       service = LinkCreateService.new(user: user,
                                       link_attributes: link_attributes,
                                       token_generator_type: FakeTokenGenerator)
-      expected_token = FakeTokenGenerator.new(link_attributes[:url]).token
+      expected_token = FakeTokenGenerator.new(input: link_attributes[:url]).token
 
       service.create
 
