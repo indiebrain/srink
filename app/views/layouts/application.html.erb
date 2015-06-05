@@ -4,6 +4,7 @@
   <%= stylesheet_link_tag 'application' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tag %>
+  <title><%= yield(:page_title) %></title>
 </head>
 <body>
 
@@ -15,9 +16,9 @@
       <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu"><%= t(".menu") %></a>
       <nav role="navigation">
         <ul id="js-navigation-menu" class="navigation-menu show">
-          <li class="nav-link"><a href="<%= about_path %>"><%= t(".about") %></a></li>
+          <li class="nav-link"><%= link_to t(".about"), page_path("about") %></li>
           <% if signed_in? %>
-          <li class="nav-link"><a href="<%= links_path %>"><%= t(".links") %></a></li>
+          <li class="nav-link"><%= link_to t(".links"), links_path %>"></li>
             <% end %>
         </ul>
       </nav>

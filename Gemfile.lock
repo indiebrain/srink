@@ -86,6 +86,7 @@ GEM
       thor (~> 0.19.1)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
+    high_voltage (2.3.0)
     i18n (0.7.0)
     i18n_yaml_sorter (0.2.0)
     jbuilder (2.2.16)
@@ -211,6 +212,7 @@ DEPENDENCIES
   dotenv-rails
   factory_girl_rails (~> 4.0)
   foreman
+  high_voltage (~> 2.3.0)
   i18n_yaml_sorter
   jbuilder (~> 2.0)
   jquery-rails

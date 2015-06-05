@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  root "pages#about"
 
-  get "/about", controller: :pages, action: :about, as: :about
+  # Root path is defined in config/initializers/high_voltage.rb
+
   resources :links, only: [:index, :new, :create, :show, :destroy]
   resources :redirects, only: :show
 end
