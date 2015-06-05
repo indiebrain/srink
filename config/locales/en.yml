@@ -38,7 +38,7 @@ en:
       url: URL
     index:
       actions: Actions
-      full_url: Destination
+      full_url: URL
       new_link: New Link
       short_url: Short URL
   pages:
