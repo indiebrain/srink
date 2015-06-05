@@ -4,11 +4,7 @@ class RedirectsController < ActionController::Base
   protect_from_forgery with: :exception
 
   def show
-    link = Link.where(token: params[:id]).first
-    if link.present?
-      redirect_to link.url
-    else
-      redirect_to "/404.html"
-    end
+    service = RedirectService.new(params[:id])
+    redirect_to service.url
   end
 end
