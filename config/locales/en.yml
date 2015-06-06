@@ -44,12 +44,12 @@ en:
   pages:
     about:
       about_author: |
-        Shortly was authored by Aaron Kuehler. Aaron despises writing about himself in the 3rd person, and you can find him elsewhere:
+        Srink was authored by Aaron Kuehler. Aaron despises writing about himself in the 3rd person, and you can find him elsewhere:
       author: Author
       about_source: |
-        Shortly is free for use under the MIT licence. The full source, and its development history can be found here:
-      intro: Another OpenSource URL "shortener". Shortly is a simple, but non-trivial,
+        Srink is free for use under the MIT licence. The full source, and its development history can be found here:
+      intro: Another OpenSource URL "shortener". Srink is a simple, but non-trivial,
         toy application meant to demonstrate web application  construction techniques.
-        Shortly was developed using outside-in, test driven development.
+        Srink was developed using outside-in, test driven development.
       source: Source Code
-      welcome: Welcome to Shortly
+      welcome: Welcome to Srink

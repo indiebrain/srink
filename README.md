@@ -1,6 +1,6 @@
-# shortly
+# srink
 
-Another URL shortener. Shortly is a simple, but non-trivial, toy application meant to demonstrate web application construction techniques. Shortly was developed using outside-in, test driven development.
+Another URL shortener. Srink is a simple, but non-trivial, toy application meant to demonstrate web application construction techniques. Srink was developed using outside-in, test driven development.
 
 
 ## System dependencies
@@ -11,8 +11,8 @@ Another URL shortener. Shortly is a simple, but non-trivial, toy application mea
 ## Application setup
 * Get the source
 ```
-git clone http://www.github.com/indiebrain/shortly.git
-cd shortly
+git clone http://www.github.com/indiebrain/srink.git
+cd srink
 ```
 * Install bundle dependencies
 ```
