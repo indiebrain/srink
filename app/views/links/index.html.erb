@@ -1,24 +1,15 @@
 <%= link_to t(".new_link"), new_link_path  %>
 
-<table id="links" class="tables">
-<thead>
-  <tr>
-    <th><%= t(".short_url") %></th>
-    <th><%= t(".full_url") %></th>
-    <th><%= t(".actions") %></th>
-  </tr>
-</thead>
-<tbody>
+<ul id="links">
   <% @links.each do |link| %>
-  <tr id="<%= "link-#{link.id}" %>">
-    <td class="short-url">
+  <li id="<%= "link-#{link.id}" %>" class="link">
+    <div class="url"><%= link.url %></div>
+    <div class="short-url">
       <a href="<%= redirect_url(link.token) %>"><%= redirect_url(link.token) %></a>
-    </td>
-    <td class="url"><%= link.url %></td>
-    <td class="actions">
+    </div>
+    <div class="actions">
       <%= button_to "Delete", link_path(link), method: :delete %>
-    </td>
-  </tr>
+    </div>
+  </li>
   <% end %>
-</tbody>
 </table>

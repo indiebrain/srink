@@ -1,0 +1,26 @@
+ul#links {
+  padding-top: 1em;
+
+  li.link {
+    @include outer-container;
+    border-top: .25em solid black;
+    padding-top: .25em;
+    padding-bottom: .25em;
+
+    .url,
+    .short-url{
+        @include span-columns(12 of 12);
+      @include media($medium-screen-up) {
+        @include span-columns(5 of 12);
+      }
+    }
+    .actions {
+      @include span-columns(12 of 12);
+      @include media($medium-screen-up) {
+        @include span-columns(2 of 12);
+      }
+    }
+
+
+  }
+}
