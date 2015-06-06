@@ -9,7 +9,7 @@ describe RedirectsController do
                     token: "token")
 
       get(:show,
-          id: link.token)
+          token: link.token)
 
       expect(response).
         to redirect_to(link.url)
@@ -18,7 +18,7 @@ describe RedirectsController do
     it "redirects to a not found page when a link is not found for the given token" do
 
       get(:show,
-          id: 'invalid-token')
+          token: 'invalid-token')
 
       expect(response).
         to redirect_to("/404.html")

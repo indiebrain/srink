@@ -4,7 +4,7 @@ class RedirectsController < ActionController::Base
   protect_from_forgery with: :exception
 
   def show
-    service = RedirectService.new(params[:id])
+    service = RedirectService.new(params[:token])
     redirect_to service.url
   end
 end

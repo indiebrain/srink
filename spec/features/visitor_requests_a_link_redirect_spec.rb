@@ -7,7 +7,7 @@ feature "Visitor requests a link redirect" do
                   url: "http://destination.url/",
                   token: "token")
 
-    visit("redirects/token")
+    visit("/r/token")
 
     expect(page.current_url).
       to eq("http://destination.url/")
