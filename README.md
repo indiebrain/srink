@@ -1,6 +1,6 @@
 # srink
 
-Another URL shortener. Srink is a simple, but non-trivial, toy application meant to demonstrate web application construction techniques. Srink was developed using outside-in, test driven development.
+Another URL "shortener". Srink is a simple, but non-trivial, toy application meant to demonstrate web application construction techniques. Srink was developed using outside-in, test driven development. A demo instance of srink is deployed at http://www.srink.us/
 
 
 ## System dependencies
