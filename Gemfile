@@ -1,5 +1,7 @@
 source "https://rubygems.org"
 
+ruby "2.2.2"
+
 gem "bourbon"
 gem "clearance"
 gem "coffee-rails", "~> 4.1.0"
@@ -35,3 +37,10 @@ group :development, :test do
   gem "web-console", "~> 2.0"
 end
 
+group :development, :production do
+  gem "newrelic_rpm"
+end
+
+group :production do
+  gem "rails_12factor"
+end
