@@ -1,0 +1,17 @@
+language: ruby
+rvm:
+  - 2.3.3
+services:
+  - postgresql
+before_install:
+  - gem install bundler
+before_script:
+  - cp .env_example .env
+  - psql -c 'create database srink_test;' -U postgres
+  - bundle install
+  - bundle exec rake db:migrate RAILS_ENV=test
+script:
+  - bundle exec rspec
+addons:
+    code_climate:
+        repo_token: 6d4e6d5bcbecb8e6afc5c167d824b55dfe4faafa4822c9155e4339e4cea935b7
