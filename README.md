@@ -1,5 +1,9 @@
 # srink
 
+[![Code Climate](https://lima.codeclimate.com/github/indiebrain/srink/badges/gpa.svg)](https://lima.codeclimate.com/github/indiebrain/srink)
+
+[![Issue Count](https://lima.codeclimate.com/github/indiebrain/srink/badges/issue_count.svg)](https://lima.codeclimate.com/github/indiebrain/srink)
+
 Another URL "shortener". Srink is a simple, but non-trivial, toy application meant to demonstrate web application construction techniques. Srink was developed using outside-in, test driven development. A demo instance of srink is deployed at http://www.srink.us/
 
 
@@ -45,4 +49,3 @@ bin/rake db:create db:migrate RAILS_ENV=test
 ```shell
 bin/rake
 ```
-
