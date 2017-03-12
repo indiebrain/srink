@@ -25,17 +25,21 @@ group :development do
   gem "bitters"
   gem "foreman"
   gem "i18n_yaml_sorter"
+  gem "web-console", ">= 3.3.0"
+end
+
+group :test do
+  gem "capybara"
+  gem "factory_girl_rails", "~> 4.0"
+  gem "rails-controller-testing"
+  gem "rspec-rails", "~> 3.0"
+  gem "shoulda-matchers"
 end
 
 group :development, :test do
   gem "byebug", platform: :mri
-  gem "capybara"
-  gem "factory_girl_rails", "~> 4.0"
   gem "listen", "~>3.0.5"
-  gem "rspec-rails", "~> 3.0"
-  gem "shoulda-matchers"
   gem "spring"
-  gem "web-console", ">= 3.3.0"
   gem "spring-watcher-listen", "~> 2.0.0"
 end
 
