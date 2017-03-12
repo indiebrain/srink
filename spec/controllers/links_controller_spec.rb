@@ -5,8 +5,12 @@ describe LinksController do
   describe "DELETE #destroy" do
     it "requires authentication" do
       link = create(:link)
-      delete(:destroy,
-             id: link.id)
+      delete(
+        :destroy,
+        params: {
+          id: link.id
+        }
+      )
 
       expect(response).
         to redirect_to(sign_in_path)
@@ -14,11 +18,17 @@ describe LinksController do
 
     it "redirects to the links index when the link is deleted" do
       user = sign_in
-      link = create(:link,
-                    user: user)
+      link = create(
+        :link,
+        user: user
+      )
 
-      delete(:destroy,
-             id: link.id)
+      delete(
+        :destroy,
+        params: {
+          id: link.id
+        }
+      )
 
       expect(response).
         to redirect_to(links_path)
@@ -26,11 +36,17 @@ describe LinksController do
 
     it "renders a notice flash when the link is deleted" do
       user = sign_in
-      link = create(:link,
-                    user: user)
+      link = create(
+        :link,
+        user: user
+      )
 
-      delete(:destroy,
-             id: link.id)
+      delete(
+        :destroy,
+        params: {
+          id: link.id
+        }
+      )
 
       expect(flash[:notice]).
         to eq(t("links.delete.deleted_link", url: link.url))
@@ -47,8 +63,10 @@ describe LinksController do
 
     it "assigns the user's links" do
       user = sign_in
-      user_link = create(:link,
-                    user: user)
+      user_link = create(
+        :link,
+        user: user
+      )
       other_user_link = create(:link)
 
       get(:index)
@@ -88,8 +106,12 @@ describe LinksController do
       sign_in
       link_attributes = attributes_for(:link)
 
-      post(:create,
-           link: link_attributes)
+      post(
+        :create,
+        params: {
+          link: link_attributes
+        }
+      )
 
       expect(assigns(:link)).
         to_not be_nil
@@ -99,8 +121,12 @@ describe LinksController do
       user = sign_in
       link_attributes = attributes_for(:link)
 
-      post(:create,
-           link: link_attributes)
+      post(
+        :create,
+        params: {
+          link: link_attributes
+        }
+      )
 
       link = user.links.first
       expect(response).
@@ -111,8 +137,12 @@ describe LinksController do
       sign_in
       invalid_link_attributes = {url: nil}
 
-      post(:create,
-           link: invalid_link_attributes)
+      post(
+        :create,
+        params: {
+          link: invalid_link_attributes
+        }
+      )
 
       expect(response).
         to render_template(:new)
@@ -122,8 +152,12 @@ describe LinksController do
       sign_in
       invalid_link_attributes = {url: nil}
 
-      post(:create,
-           link: invalid_link_attributes)
+      post(
+        :create,
+        params: {
+          link: invalid_link_attributes
+        }
+      )
 
       expect(assigns(:link)).
         to_not be_nil
@@ -133,8 +167,12 @@ describe LinksController do
       sign_in
       invalid_link_attributes = {url: nil}
 
-      post(:create,
-           link: invalid_link_attributes)
+      post(
+        :create,
+        params: {
+          link: invalid_link_attributes
+        }
+      )
 
       expect(response).
         to have_http_status(:unprocessable_entity)
@@ -144,8 +182,12 @@ describe LinksController do
       sign_in
       invalid_link_attributes = {url: nil}
 
-      post(:create,
-           link: invalid_link_attributes)
+      post(
+        :create,
+        params: {
+          link: invalid_link_attributes
+        }
+      )
 
       expect(flash[:error]).
         to_not be_nil
