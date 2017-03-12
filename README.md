@@ -1,7 +1,7 @@
 # srink
 
 [![Code Climate](https://lima.codeclimate.com/github/indiebrain/srink/badges/gpa.svg)](https://lima.codeclimate.com/github/indiebrain/srink)
-
+[![Test Coverage](https://lima.codeclimate.com/github/indiebrain/srink/badges/coverage.svg)](https://lima.codeclimate.com/github/indiebrain/srink/coverage)
 [![Issue Count](https://lima.codeclimate.com/github/indiebrain/srink/badges/issue_count.svg)](https://lima.codeclimate.com/github/indiebrain/srink)
 
 Another URL "shortener". Srink is a simple, but non-trivial, toy application meant to demonstrate web application construction techniques. Srink was developed using outside-in, test driven development. A demo instance of srink is deployed at http://www.srink.us/

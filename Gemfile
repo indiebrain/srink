@@ -30,10 +30,12 @@ end
 
 group :test do
   gem "capybara"
+  gem "codeclimate-test-reporter"
   gem "factory_girl_rails", "~> 4.0"
   gem "rails-controller-testing"
   gem "rspec-rails", "~> 3.0"
   gem "shoulda-matchers"
+  gem "simplecov"
 end
 
 group :development, :test do
