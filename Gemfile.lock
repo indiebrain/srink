@@ -95,7 +95,7 @@ GEM
       thor (~> 0.19.1)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
-    high_voltage (2.3.0)
+    high_voltage (3.0.0)
     i18n (0.8.1)
     i18n_yaml_sorter (0.2.0)
     jbuilder (2.6.3)
@@ -250,7 +250,7 @@ DEPENDENCIES
   flutie
   font-awesome-rails
   foreman
-  high_voltage (~> 2.3.0)
+  high_voltage (~> 3.0.0)
   i18n_yaml_sorter
   jbuilder (~> 2.5)
   jquery-rails
