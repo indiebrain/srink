@@ -1,8 +1,15 @@
 require "rails_helper"
 require "support/features/clearance_helpers"
 
-feature "Visitor resets password" do
+RSpec.feature "Visitor resets password" do
   before { ActionMailer::Base.deliveries.clear }
+
+  around do |example|
+    original_adapter = ActiveJob::Base.queue_adapter
+    ActiveJob::Base.queue_adapter = :inline
+    example.run
+    ActiveJob::Base.queue_adapter = original_adapter
+  end
 
   scenario "by navigating to the page" do
     visit sign_in_path
@@ -47,7 +54,7 @@ feature "Visitor resets password" do
     message = ActionMailer::Base.deliveries.any? do |email|
       email.to == [recipient] &&
         email.subject =~ /#{subject}/i &&
-        email.html_part.body =~ /#{body}/
+        email.html_part.body =~ /#{body}/ &&
         email.text_part.body =~ /#{body}/
     end
 
