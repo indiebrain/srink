@@ -1,0 +1,6 @@
+.git
+.env_example
+Dockerfile
+Procfile
+log
+spec

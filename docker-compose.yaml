@@ -1,0 +1,40 @@
+version: '3.3'
+services:
+  db:
+    image: postgres:9.4
+    volumes:
+      - source: relational-db
+        target: /var/lib/postgresql/data
+        type: volume
+
+  proxy:
+    restart: always
+    build:
+      context: ./Docker/proxy
+      dockerfile: Dockerfile
+    ports:
+      - 80:80
+    links:
+      - app
+
+  app:
+    tty: true
+    build: .
+    command: ./bin/rails server -p 3000 --bind '0.0.0.0'
+    links:
+      - db
+    expose:
+      - "3000"
+    volumes:
+      - source: gems
+        target: /usr/local/bundle/
+        type: volume
+      - source: .
+        target: /opt/app
+        type: bind
+    env_file:
+      - ${ENV_FILE:-.env.docker}
+
+volumes:
+  relational-db:
+  gems:

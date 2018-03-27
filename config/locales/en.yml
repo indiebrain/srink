@@ -47,7 +47,7 @@ en:
         Srink was authored by Aaron Kuehler. Aaron despises writing about himself in the 3rd person, and you can find him elsewhere:
       author: Author
       about_source: |
-        Srink is free for use under the MIT licence. The full source, and its development history can be found here:
+        Srink is free, as in freedom, for use under a permissive, copyleft license. The full source, and its development history can be found here:
       intro: Another OpenSource URL "shortener". Srink is a simple, but non-trivial,
         toy application meant to demonstrate web application  construction techniques.
         Srink was developed using outside-in, test driven development.
