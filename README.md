@@ -1,5 +1,6 @@
 # srink
 
+[![Build Status](https://travis-ci.org/indiebrain/srink.svg?branch=master)](https://travis-ci.org/indiebrain/srink)
 [![Code Climate](https://lima.codeclimate.com/github/indiebrain/srink/badges/gpa.svg)](https://lima.codeclimate.com/github/indiebrain/srink)
 [![Test Coverage](https://lima.codeclimate.com/github/indiebrain/srink/badges/coverage.svg)](https://lima.codeclimate.com/github/indiebrain/srink/coverage)
 [![Issue Count](https://lima.codeclimate.com/github/indiebrain/srink/badges/issue_count.svg)](https://lima.codeclimate.com/github/indiebrain/srink)
