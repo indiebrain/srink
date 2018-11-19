@@ -14,7 +14,7 @@ gem "jquery-rails"
 gem "neat"
 gem "pg"
 gem "puma"
-gem "rails", "5.1.6"
+gem "rails", "5.2.0"
 gem "sass-rails", "~> 5.0"
 gem "sdoc", "~> 0.4.0", group: :doc
 gem "simple_form"
@@ -23,6 +23,7 @@ gem "uglifier", ">= 1.3.0"
 
 group :development do
   gem "bitters"
+  gem "bootsnap"
   gem "foreman"
   gem "i18n_yaml_sorter"
   gem "web-console", ">= 3.3.0"
