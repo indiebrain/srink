@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 ruby "2.5.3"
 
+gem "bootsnap"
 gem "bourbon"
 gem "clearance"
 gem "coffee-rails", "~> 4.2"
@@ -23,7 +24,6 @@ gem "uglifier", ">= 1.3.0"
 
 group :development do
   gem "bitters"
-  gem "bootsnap"
   gem "foreman"
   gem "i18n_yaml_sorter"
   gem "web-console", ">= 3.3.0"
