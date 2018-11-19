@@ -18,15 +18,15 @@
         <ul id="js-navigation-menu" class="navigation-menu show">
           <li class="nav-link"><%= link_to t(".about"), page_path("about") %></li>
           <% if signed_in? %>
-          <li class="nav-link"><%= link_to t(".links"), links_path %>"></li>
-            <% end %>
+            <li class="nav-link"><%= link_to t(".links"), links_path %>"></li>
+          <% else %>
+            <li class="nav-link"><%= link_to t(".sign_in"), sign_in_path %></li>
+          <% end %>
         </ul>
       </nav>
       <div class="navigation-tools">
         <% if signed_in? %>
           <%= button_to t(".sign_out"), sign_out_path, method: :delete, class: "sign-out" %>
-        <% else %>
-          <%= link_to t(".sign_in"), sign_in_path, class: "sign-in" %>
         <% end %>
       </div>
     </div>

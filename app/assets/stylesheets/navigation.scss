@@ -3,7 +3,7 @@ header.navigation {
   $base-border-radius: 3px !default;
   $action-color: #477DCA !default;
   $dark-gray: #333 !default;
-  $large-screen: em(860) !default;
+  $large-screen: 53.75em !default;
   $navigation-padding: 1em;
   $navigation-background: $dark-gray;
   $navigation-color: transparentize(white, 0.3);
@@ -27,7 +27,6 @@ header.navigation {
 
   .navigation-wrapper {
     @include clearfix;
-    @include outer-container;
     position: relative;
     z-index: 9999;
   }
@@ -44,17 +43,16 @@ header.navigation {
     }
   }
 
-
   // Mobile view
 
   .navigation-menu-button {
     color: $navigation-color;
     display: block;
     float: right;
-    font-weight: 700;
     line-height: $navigation-height;
     margin: 0;
     padding-right: 1em;
+    text-decoration: none;
     text-transform: uppercase;
 
     @include media ($horizontal-bar-mode) {
@@ -66,7 +64,6 @@ header.navigation {
       color: $navigation-color-hover;
     }
   }
-
 
   // Nav menu
 
@@ -81,8 +78,6 @@ header.navigation {
   }
 
   ul.navigation-menu {
-    -webkit-transform-style: preserve-3d;
-    // stop webkit flicker
     clear: both;
     display: none;
     margin: 0 auto;
@@ -101,7 +96,6 @@ header.navigation {
       padding: 0;
     }
   }
-
 
   // The nav items
 
@@ -126,7 +120,6 @@ header.navigation {
     a {
       color: $navigation-color;
       display: inline-block;
-      font-weight: 400;
       text-decoration: none;
 
       @include media ($horizontal-bar-mode) {
@@ -144,7 +137,6 @@ header.navigation {
     border-bottom: 1px solid $navigation-active-link-color;
     padding-bottom: 3px;
   }
-
 
   // Sub menus
 
@@ -167,10 +159,10 @@ header.navigation {
       padding-right: 0.6em;
     }
 
-    > a:after {
+    > a::after {
       @include position(absolute, auto -0.4em auto auto);
-      content: '\25BE';
       color: $navigation-color;
+      content: "\25BE";
     }
   }
 
@@ -190,8 +182,8 @@ header.navigation {
         margin-right: $navigation-submenu-padding;
       }
 
-      &:after {
-        content: '›';
+      &::after {
+        content: "›";
         font-size: 1.2em;
         position: absolute;
         right: $navigation-submenu-padding / 2;
@@ -217,6 +209,20 @@ header.navigation {
       left: -$navigation-submenu-padding;
       position: absolute;
       top: 1.5em;
+    }
+
+    .submenu.fly-out-right {
+      @include media($horizontal-bar-mode) {
+        left: $navigation-submenu-width - 0.2em;
+        top: 0;
+      }
+    }
+
+    .submenu.fly-out-left {
+      @include media($horizontal-bar-mode) {
+        left: -$navigation-submenu-width + 0.2em;
+        top: 0;
+      }
     }
 
     .submenu {
@@ -261,7 +267,6 @@ header.navigation {
     }
   }
 
-
   // Elements on the far right
 
   .navigation-tools {
@@ -269,8 +274,6 @@ header.navigation {
     clear: both;
     display: block;
     height: $navigation-height;
-    padding-left: $navigation-padding / 2;
-    padding-right: $navigation-padding;
 
     @include media($horizontal-bar-mode) {
       background: transparent;
@@ -281,13 +284,15 @@ header.navigation {
 
   .sign-in,
   .sign-out {
-    @include button(flat, $action-color);
-    display: inline;
-    float: right;
-    font-size: 0.8em;
-    margin-top: 1em;
-    padding: 0.75em 1em;
-    text-transform: uppercase;
+    background: $navigation-search-background;
+    border: 0;
+    bottom: 0.3em;
+    left: auto;
+    outline: none;
+    padding: 0 9px;
+    position: absolute;
+    right: 0.3em;
+    top: 0.3em;
   }
 
 
@@ -299,17 +304,17 @@ header.navigation {
     $search-bar-background: lighten($search-bar-border-color, 10%);
 
     float: left;
-    padding: 0.85em 0.6em 0.7em 0.6em;
+    padding: 0.85em 0.85em 0.7em 0.6em;
     width: 60%;
 
     form {
       position: relative;
 
       input[type=search] {
-        @include box-sizing(border-box);
         background: $navigation-search-background;
-        border-radius: $base-border-radius * 2;
         border: $navigation-search-border;
+        border-radius: $base-border-radius * 2;
+        box-sizing: border-box;
         color: $navigation-color;
         font-size: 0.9em;
         font-style: italic;
@@ -323,7 +328,8 @@ header.navigation {
       }
 
       button[type=submit] {
-        @include button(flat, $navigation-search-background);
+        background: $navigation-search-background;
+        border: 0;
         bottom: 0.3em;
         left: auto;
         outline: none;
@@ -346,7 +352,7 @@ header.navigation {
       width: 16em;
 
       input {
-        @include box-sizing(border-box);
+        box-sizing: border-box;
         display: block;
       }
     }

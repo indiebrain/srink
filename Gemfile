@@ -14,7 +14,7 @@ gem "jquery-rails"
 gem "neat"
 gem "pg"
 gem "puma"
-gem "rails", "5.0.7"
+gem "rails", "5.1.6"
 gem "sass-rails", "~> 5.0"
 gem "sdoc", "~> 0.4.0", group: :doc
 gem "simple_form"
