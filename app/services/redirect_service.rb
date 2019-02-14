@@ -12,9 +12,6 @@ class RedirectService
   attr_reader :token
 
   def link
-    if @link
-      return @link
-    end
-    Link.where(token: token).first || NoLink.new
+    @link ||= Link.where(token: token).first || NoLink.new
   end
 end
