@@ -45,6 +45,7 @@ feature "User view a list of links" do
   end
 
   private
+
   def expect_page_to_have_link(link)
     within("#link-#{link.id}") do
       expect(page).

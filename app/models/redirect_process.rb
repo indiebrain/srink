@@ -1,10 +1,10 @@
-class RedirectService
+class RedirectProcess
 
   def initialize(token)
     @token = token
   end
 
-  def url
+  def call
     link.url
   end
 
@@ -12,6 +12,6 @@ class RedirectService
   attr_reader :token
 
   def link
-    @link ||= Link.where(token: token).first || NoLink.new
+    @link ||= Link.find_by(token: token)|| NoLink.new
   end
 end
