@@ -1,19 +1,18 @@
 require "rails_helper"
 
-describe RedirectProcess do
+RSpec.describe RedirectProcess do
   describe "#call" do
-    it "is the URL associated with the token when a link exists for the token" do
-      token = "link-token"
-      link = known_link(url: "link-url", token: token)
+    it "is the link's url when the token belongs to a known link" do
+      link = known_link()
 
-      result = described_class.new(token).call
+      result = described_class.new(link.token).call
 
       expect(result)
         .to eq(link.url)
     end
 
-    it "is the unknown URL when the link cannot be found" do
-      unknown_link = unknown_link(url: "unknown-url")
+    it "is the not found url when the token is unknown" do
+      unknown_link = unknown_link()
 
       result = described_class.new("unknown-token").call
 
@@ -21,12 +20,23 @@ describe RedirectProcess do
         to eq(unknown_link.url)
     end
 
-    def known_link(url:, token:)
+    it "records the visit when the token belongs to a known link" do
+      link = known_link()
+
+      described_class.new(link.token).call
+
+      expect(link.visits)
+        .to have_received(:create)
+    end
+
+    def known_link(url: "known-link-url", token: "known-link-token")
       link = instance_double(
         "Link",
         token: token,
         url: url
       )
+      visits = stub_visits(link: link)
+      allow(visits).to receive(:create)
 
       link_class = class_double("Link")
                      .as_stubbed_const
@@ -38,11 +48,17 @@ describe RedirectProcess do
       link
     end
 
-    def unknown_link(url:)
-      unknown_link = instance_double("NoLink", url: "unknown-url")
-      class_double("NoLink", new: unknown_link).as_stubbed_const
+    def unknown_link(url: "unknown-link-url")
+      class_double("UnknownLink", url: url).as_stubbed_const
+    end
 
-      unknown_link
+    def stub_visits(link:)
+     visits_association = instance_double("ActiveRecord::Associations::CollectionProxy")
+     allow(link)
+       .to receive(:visits)
+       .and_return(visits_association)
+
+     visits_association
     end
   end
 end

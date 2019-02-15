@@ -53,6 +53,9 @@ feature "User view a list of links" do
 
       expect(page).
         to have_content(redirect_url(link.token))
+
+      expect(page).
+        to have_content(link.visits.size)
     end
   end
 end

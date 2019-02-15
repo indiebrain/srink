@@ -5,6 +5,7 @@
     <tr>
       <th>Original</th>
       <th>Srink URL</th>
+      <th>Visits</th>
       <th>Actions</th>
     </tr>
   </thead>
@@ -12,7 +13,8 @@
     <% @links.each do |link| %>
       <tr id="<%= "link-#{link.id}" %>">
         <td><%= link.url %></td>
-        <td><a href="<%= redirect_url(link.token) %>"><%= redirect_url(link.token) %></a></td>
+        <td><a href="<%= redirect_url(link.token) %>" data-turbolinks="false"><%= redirect_url(link.token) %></a></td>
+        <td><%= link.visits.size %></td>
         <td><%= button_to "Delete", link_path(link), method: :delete %></td>
       </tr>
     <% end %>
