@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2015_05_30_113406) do
+ActiveRecord::Schema.define(version: 2019_02_15_012435) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2015_05_30_113406) do
     t.text "token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "visits_count"
     t.index ["token"], name: "index_links_on_token", unique: true
     t.index ["user_id"], name: "index_links_on_user_id"
   end
@@ -34,6 +35,13 @@ ActiveRecord::Schema.define(version: 2015_05_30_113406) do
     t.string "remember_token", limit: 128, null: false
     t.index ["email"], name: "index_users_on_email"
     t.index ["remember_token"], name: "index_users_on_remember_token"
+  end
+
+  create_table "visits", force: :cascade do |t|
+    t.bigint "link_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["link_id"], name: "index_visits_on_link_id"
   end
 
   add_foreign_key "links", "users"

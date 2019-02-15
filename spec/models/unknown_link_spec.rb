@@ -1,11 +1,10 @@
 require "rails_helper"
 
-describe NoLink do
+RSpec.describe UnknownLink do
 
-  describe "url" do
+  describe ".url" do
     it "is a default url" do
-      no_link = NoLink.new
-      expect(no_link.url).
+      expect(UnknownLink.url).
         to eq("/404.html")
     end
   end
