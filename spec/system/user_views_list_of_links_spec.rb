@@ -1,8 +1,8 @@
 require "rails_helper"
 
-RSpec.feature "User view a list of links", type: :feature do
+RSpec.describe "User view a list of links", type: :system do
 
-  scenario "when the user has at last one link" do
+  it "shows the user's links" do
     user = create(:user)
     link = create(:link,
                   user: user,
@@ -16,7 +16,7 @@ RSpec.feature "User view a list of links", type: :feature do
     expect_page_to_have_link(link)
   end
 
-  scenario "user wants to creates a new link" do
+  it "has a navigation item to create a new link" do
     sign_in
     visit("/links")
     click_link(t("links.index.new_link"))
@@ -25,7 +25,7 @@ RSpec.feature "User view a list of links", type: :feature do
       to eq(new_link_path)
   end
 
-  scenario "user wants to delete a link" do
+  it "has an action item to delete a link" do
     user = create(:user)
     link = create(:link,
                   user: user,

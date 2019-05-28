@@ -1,8 +1,8 @@
 require "rails_helper"
 
-RSpec.feature "User shortens a link", type: :feature do
+RSpec.describe "User shortens a link", type: :system do
 
-  scenario "with a valid url" do
+  it "shortens the url" do
     user = create(:user)
     sign_in_with(user.email,
                  user.password)
@@ -17,7 +17,7 @@ RSpec.feature "User shortens a link", type: :feature do
     expect_to_be_on_link_index_page(link)
   end
 
-  scenario "with an invalid url" do
+  it "fails validation with an invalid url" do
     user = create(:user)
     sign_in_with(user.email,
                  user.password)

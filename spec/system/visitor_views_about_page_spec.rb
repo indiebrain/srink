@@ -1,14 +1,14 @@
 require "rails_helper"
 
-feature "Visitor views about page" do
+RSpec.describe "Visitor views about page", type: :system do
 
-  scenario "as default path" do
+  it "displays the about content" do
     visit("/")
 
     expect_to_be_viewing_the_about_content
   end
 
-  scenario "when the _about_ navigation item is clicked" do
+  it "displays the about content when the _about_ navigation item is clicked" do
     visit("/")
     click_link(t("layouts.application.about"))
 

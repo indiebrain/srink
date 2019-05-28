@@ -1,8 +1,8 @@
 require "rails_helper"
 
-RSpec.feature "Visitor requests a link redirect", type: :feature do
+RSpec.describe "Visitor requests a link redirect", type: :system do
 
-  scenario "with a valid token" do
+  it "redirects with a valid token" do
     link = create(:link,
                   url: "http://destination.url/",
                   token: "token")
