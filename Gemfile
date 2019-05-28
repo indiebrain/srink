@@ -30,11 +30,12 @@ group :development do
 end
 
 group :test do
-  gem "capybara"
+  gem "capybara", "~> 2.0"
   gem "factory_bot_rails", "~> 4.0"
   gem "rails-controller-testing"
   gem "rspec-rails", "~> 3.0"
   gem "shoulda-matchers"
+  gem "selenium-webdriver"
   gem "simplecov"
 end
 
