@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe UnknownLink do
+RSpec.describe UnknownLink, type: :model do
 
   describe ".url" do
     it "is a default url" do

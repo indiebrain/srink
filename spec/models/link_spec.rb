@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Link do
+RSpec.describe Link, type: :model do
 
   it "requires a url" do
     expect(described_class.new).

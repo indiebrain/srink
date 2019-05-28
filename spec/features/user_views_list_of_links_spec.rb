@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "User view a list of links" do
+RSpec.feature "User view a list of links", type: :feature do
 
   scenario "when the user has at last one link" do
     user = create(:user)

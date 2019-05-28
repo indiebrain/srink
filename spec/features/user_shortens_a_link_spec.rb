@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "User shortens a link" do
+RSpec.feature "User shortens a link", type: :feature do
 
   scenario "with a valid url" do
     user = create(:user)

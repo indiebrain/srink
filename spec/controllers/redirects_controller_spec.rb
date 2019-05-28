@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe RedirectsController do
+RSpec.describe RedirectsController, type: :controller do
 
   describe "GET #show" do
     it "redirects to the destination url when a link with the given token is found" do

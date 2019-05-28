@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.feature "Visitor requests a link redirect" do
+RSpec.feature "Visitor requests a link redirect", type: :feature do
 
   scenario "with a valid token" do
     link = create(:link,

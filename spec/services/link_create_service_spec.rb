@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe LinkCreateService do
+RSpec.describe LinkCreateService do
 
   describe "#create" do
     it "creates a new link when valid attributes are passed" do

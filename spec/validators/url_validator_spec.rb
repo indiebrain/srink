@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe UrlValidator do
+RSpec.describe UrlValidator do
 
   it "is valid when the url has a protocol, host" do
     expect_url_to_be_valid("http://example")

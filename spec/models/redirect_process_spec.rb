@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe RedirectProcess do
+RSpec.describe RedirectProcess, type: :model do
   describe "#call" do
     it "is the link's url when the token belongs to a known link" do
       link = known_link()

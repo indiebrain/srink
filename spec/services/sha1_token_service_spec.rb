@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe SHA1TokenService do
+RSpec.describe SHA1TokenService do
 
   it "returns a token" do
     input = "input"

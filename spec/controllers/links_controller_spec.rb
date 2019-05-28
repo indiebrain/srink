@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe LinksController do
+RSpec.describe LinksController, type: :controller do
 
   describe "DELETE #destroy" do
     it "requires authentication" do
