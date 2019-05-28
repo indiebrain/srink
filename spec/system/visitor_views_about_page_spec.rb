@@ -16,7 +16,7 @@ RSpec.describe "Visitor views about page", type: :system do
   end
 
   def expect_to_be_viewing_the_about_content
-    expect(page).
-      to have_content(t("pages.about.about_source"))
+    expect(page.body).
+      to match(t("pages.about.about_source"))
   end
 end
