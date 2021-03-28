@@ -35,8 +35,9 @@ group :test do
   gem "capybara"
   gem "factory_bot_rails", "~> 6.0"
   gem "rails-controller-testing"
-  gem "rubocop-rspec"
   gem "rspec-rails", "~> 3.0"
+  gem "rubocop-rails"
+  gem "rubocop-rspec"
   gem "shoulda-matchers"
   gem "simplecov"
 end
