@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 ruby "2.5.3"
 
+gem "autoprefixer"
 gem "bootsnap"
 gem "bourbon"
 gem "clearance"
