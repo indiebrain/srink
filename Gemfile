@@ -33,9 +33,11 @@ end
 
 group :test do
   gem "capybara"
-  gem "factory_girl_rails", "~> 4.0"
+  gem "factory_bot_rails", "~> 6.0"
   gem "rails-controller-testing"
   gem "rspec-rails", "~> 3.0"
+  gem "rubocop-rails"
+  gem "rubocop-rspec"
   gem "shoulda-matchers"
   gem "simplecov"
 end
