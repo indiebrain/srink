@@ -1,6 +1,4 @@
 language: ruby
-ruby:
-  - 2.7.2
 env:
   global:
     - CC_TEST_REPORTER_ID=6d4e6d5bcbecb8e6afc5c167d824b55dfe4faafa4822c9155e4339e4cea935b7
