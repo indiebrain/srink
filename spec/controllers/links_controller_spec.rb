@@ -67,7 +67,7 @@ describe LinksController do
         :link,
         user: user
       )
-      other_user_link = create(:link, url: "https://some-other-url.example")
+      _other_user_link = create(:link, url: "https://some-other-url.example")
 
       get(:index)
 
